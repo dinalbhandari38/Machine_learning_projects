@@ -40,10 +40,10 @@ model.fit(X_train, y_train)
 
 #make prediction
 predictions = model.predict(X_test)
-#print("Actual values:")
-#print(y_test.values[:10])
-#print("Predicted values:")
-#print(predictions[:10])
+print("Actual values:")
+print(y_test.values[:10])
+print("Predicted values:")
+print(predictions[:10])
 
 #calculate mae mse r**2
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
