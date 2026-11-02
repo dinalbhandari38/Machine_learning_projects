@@ -62,3 +62,22 @@ plt.ylabel("Predicted Values")
 plt.title("Actual vs Predicted Values")
 plt.legend()
 plt.show()
+
+
+
+new_car = pd.DataFrame([{
+    "name": "Maruti Swift Dzire VDI",
+    "year": 2018,
+    "km_driven": 50000,
+    "fuel": "Diesel",
+    "seller_type": "Individual",
+    "transmission": "Manual",
+    "owner": "First Owner"
+}])
+new_car_encoded = pd.get_dummies(new_car)
+new_car_encoded = new_car_encoded.reindex(
+    columns=x_train.columns,
+    fill_value=0
+)
+new_prediction = model.predict(new_car_encoded)
+print("Predicted car price:", new_prediction[0])
